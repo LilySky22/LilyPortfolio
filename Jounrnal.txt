@@ -1,0 +1,4 @@
+This is the journal, where I will log my plans and developments
+
+20/10/2026
+I have uploaded the basic site to github, the next steps will be to create the NFC project, before I can update that porject page. I also need to launch the site with a netlify link before it can connect to the NFC
