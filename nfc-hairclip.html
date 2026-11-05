@@ -3,13 +3,182 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="I designed an NFC hairclip that links people to this website!">
-    <title>Lily | NFC Hairclip Project</title>
+    <meta name="description" content="A wearable NFC keychain project combining PCB design, NFC technology and creative development.">
+    <title>Lily | NFC Keychain Project</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1> Work In Progress... Stay Tuned!</h1>
+
+    <header class="project-header">
+        <p class="eyebrow">PERSONAL PROJECT</p>
+        <h1>NFC Keychain</h1>
+
+        <p>
+            Combining wearable design and technology to create
+            an interactive, unique way to share my portfolio.
+        </p>
+
+        <div class="project-actions">
+            <a href="index.html" class="button">Back to portfolio</a>
+
+            <a href="https://github.com/LilySky22/LilyPortfolio/tree/main"
+               class="button"
+               target="_blank"
+               rel="noopener noreferrer">
+                View on GitHub
+            </a>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="project-section">
+            <p class="eyebrow">01 — DESIGN</p>
+            <h2>Creating the PCB</h2>
+
+            <div class="project-content-row">
+                <div>
+                    <p>
+                        I recently discovered electronics through a few
+                        women in STEM on TikTok, and I was interested in
+                        teaching myself the basics through a project of my own.
+                    </p>
+                    <br>
+                    <p>
+                        I wanted to combine my interest in technology with
+                        a creative, personal design, which led to the idea
+                        of an NFC hairclip that allows someone to
+                        access my portfolio by tapping their phone against it.
+                    </p>
+                    <br>
+                    <p>
+                        I used EasyEDA to design a custom heart-shaped
+                        printed circuit board, incorporating the components
+                        needed for NFC functionality. The LED helps with testing,
+                        as it lights up when the NFC is activated.
+                    </p>
+                    <br>
+                    <p>
+                        I also added a QR code that links to my site, as a backup,
+                        in case the NFC doesn't work.
+                    </p>
+                    <br>
+                    <p>
+                        The PCB design was the hardest part, as I quickly realised
+                        that the parts would not all fit in the 1.5" design I had
+                        planned, meaning I had to adapt. The smallest I could realistically
+                        make the board was 6 × 6 cm, which is too large to comfortably fit in
+                        my hair. I decided to pivot my idea and turn it into a keychain
+                        instead of a hairclip.
+                    </p>
+                </div>
+
+                <div class="project-image">
+                    <img src="photos/EasyEDASchematic.png" alt="Circuit schematic designed in EasyEDA">
+                </div>
+            </div>
+
+            <div class="project-content-row">
+                <div>
+                    <p>
+                        I developed the physical PCB layout, arranging
+                        the components within the custom heart-shaped design.
+                    </p>
+                </div>
+
+                <div class="project-image">
+                    <img src="photos/EasyEDAPCB.png"
+                         alt="Custom heart-shaped PCB layout in EasyEDA">
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <p class="eyebrow">02 — DEVELOPMENT</p>
+
+            <div class="project-content-row">
+                <div>
+                    <p>
+                        Once the boards were manufactured, I moved on
+                        to configuring the NFC components. This meant
+                        I had to initialise each chip with the command
+                        before writing the URL of my portfolio website to it,
+                        which I did using NFC Tools Android.
+                    </p>
+                </div>
+
+                <div class="project-image">
+                    <img src="photos/NFCInitial.png"
+                         alt="Initialising the NFC component">
+                </div>
+            </div>
+
+            <div class="project-content-row">
+                <div>
+                    <p>
+                        I then wrote the URL of my portfolio website
+                        to the NFC component, allowing someone to access
+                        my website when scanning the keychain with a phone.
+                    </p>
+                </div>
+
+                <div class="project-image">
+                    <img src="photos/NFCWrite.jpeg"
+                         alt="Writing the portfolio website URL to the NFC">
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <p class="eyebrow">03 — TESTING</p>
+            <h2>A Working Prototype</h2>
+
+            <div class="project-content-row">
+                <div>
+                    <p>
+                        I successfully tested all five manufactured PCBs,
+                        confirming that each NFC component could link
+                        to my portfolio website when scanned using a phone.
+                    </p>
+                </div>
+
+                <div class="project-image">
+                    <img src="photos/PhysicalBoard.jpeg"
+                         alt="Physical manufactured NFC PCB">
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <p class="eyebrow">04 — NEXT STEPS</p>
+            <h2>Designing the Case</h2>
+
+            <p>
+                With the PCB design and NFC functionality complete,
+                the remaining stage is to design a physical case
+                to house and protect the electronics, allowing
+                the circuit board to become a finished keychain.
+            </p>
+        </section>
+
+    </main>
+
+    <footer class="project-footer">
+        <p>Designed and developed by Lily Morris</p>
+
+        <div class="project-actions">
+            <a href="index.html" class="button">← Back to portfolio</a>
+
+            <a href="https://github.com/LilySky22/LilyPortfolio/tree/main"
+               class="button"
+               target="_blank"
+               rel="noopener noreferrer">
+                View on GitHub ↗
+            </a>
+        </div>
+    </footer>
+
 </body>
 </html>
