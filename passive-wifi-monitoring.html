@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A passive WiFi monitoring project using an ESP32-based M5StickC PLUS2 and Arduino IDE.">
+    <title>Lily | WiFi Monitoring</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="project-header">
+        <p class="eyebrow">PERSONAL PROJECT</p>
+        <h1>Passive WiFi Monitoring Device</h1>
+
+        <p>
+            Using an ESP32-based M5StickCPlus2 to passively monitor WiFi networks and log data for analysis.
+        </p>
+
+        <div class="project-actions">
+            <a href="index.html" class="button">Back to portfolio</a>
+
+            <a href="https://github.com/LilySky22/Wi-Fi-Network-Discovery-and-Configuration-Monitoring-with-M5Stack"
+               class="button"
+               target="_blank"
+               rel="noopener noreferrer">
+                View on GitHub
+            </a>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- SECTION 01: CHECKING FUNCTIONALITY -->
+        <section class="project-section">
+            <p class="eyebrow">01 — CHECKING FUNCTIONALITY</p>
+            <h2>Connecting the M5 with my PC</h2>
+
+            <div class="project-content-row">
+                <div>
+                    <p>
+                        I recently participated in an ethical hacking masterclass at 
+                        the University of Cumbria, where we used ESP32 devices to 
+                        create a wardriving tool. I wanted to build upon what I had 
+                        learned by developing my own similar project.
+                    </p>
+                    <br>
+                    <p>
+                        The device uses passive WiFi scanning to discover nearby wireless 
+                        networks without connecting to them or attempting authentication. 
+                        It filters the results to identify a specific authorised test 
+                        network, allowing its advertised network characteristics to be 
+                        examined.
+                    </p>
+                    <br>
+                    <p>
+                        I downloaded the M5Stack libraries onto Arduino IDE and connected the 
+                        M5StickCPlus2 to my PC via USB. I then uploaded the example code for the 
+                        device, which allowed me to check that it was functioning correctly.
+                    </p>
+                    <br>
+                    <p>
+                        I had never used C++ before, but found it relatively 
+                        self-explanatory and easy to follow. I was able to 
+                        understand the code and make small changes to it.
+                    </p>
+                </div>
+
+                <div class="project-image">
+                    <img src="photos/01DisplayScreen.jpeg"
+                         alt="The M5StickCPlus2 displaying the test screen">
+                </div>
+            </div>
+
+            <div class="project-content-row">
+                <div>
+                    <p>
+                        The only issue I had was that the device did not display the text aligned to the centre
+                        of the screen. It was also in portrait rather than landscape orientation, which made it difficult to 
+                        read. I was able to fix this by changing the display orientation in the code.
+                    </p>
+                </div>
+
+                <div class="project-image">
+                    <img src="photos/02Display.jpeg"
+                         alt="The M5StickCPlus2 displaying the test screen with the text aligned to the centre">
+                </div>
+            </div>
+        </section>
+
+
+        <!-- SECTION 02: BASIC WIFI SCANNING -->
+        <section class="project-section">
+            <p class="eyebrow">02 — BASIC WIFI SCANNING</p>
+
+            <div class="project-content-row">
+                <div>
+                    <p>
+                        Once I knew the device was functioning, I moved on to creating
+                        a basic WiFi scanning program. Because I was new to C++ and 
+                        ESP32 development, I didn't understand what some elements meant, 
+                        such as "Baud rate" and "#include", so I had to research these 
+                        terms to understand what they meant and how they worked.
+                    </p>
+                </div>
+
+                <div class="project-image">
+                    <img src="photos/03scan.jpeg"
+                         alt="The display screen showing the updated scan results">
+                </div>
+            </div>
+
+            <div class="project-content-row">
+                <div>
+                    <p>
+                        Initially, I did not synchronise the baud rate between the device and 
+                        the serial monitor, which meant that the text on the display 
+                        was not updating correctly. I fixed this by changing the baud 
+                        rate in the code to match that of the serial monitor.
+                    </p>
+                    <br>
+                    <p>
+                        This outputs the number of networks found, the SSID, BSSID, 
+                        channel, signal strength, number of authorised networks and 
+                        whether each network is encrypted or open.
+                    </p>
+                </div>
+
+                <div class="project-image">
+                    <img src="photos/04result.png"
+                         alt="The serial monitor showing the results of the WiFi scan">
+                </div>
+            </div>
+
+            <div class="project-content-row">
+                <div>
+                    <p>
+                        I also recorded the scanning process to demonstrate how
+                        the device identifies and displays nearby networks.
+                    </p>
+                </div>
+
+                <div class="project-image">
+                    <video controls muted style="max-width: 50%;">
+                        <source src="photos/06scan.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- SECTION 03: DETECTING PROTOCOLS -->
+        <section class="project-section">
+            <p class="eyebrow">03 — DETECTING PROTOCOLS</p>
+            <h2>Detecting the protocol of the network</h2>
+
+            <div class="project-content-row">
+                <div>
+                    <p>
+                        I added a switch statement, which is essentially a more efficient 
+                        way of using multiple if statements, to select the encryption case. 
+                        I also created an encryption variable, which converts the result 
+                        into readable text ready to be printed.
+                    </p>
+                    <br>
+                    <p> 
+                        This code was compiled before being uploaded to the device, 
+                        which then allowed me to see the protocol of the network 
+                        in the serial monitor.
+                    </p>
+                </div>
+
+                <div class="project-image">
+                    <img src="photos/05Protocol.png"
+                         alt="The new serial monitor output showing the protocol of the network">
+                </div>
+            </div>
+        </section>
+
+
+        <!-- SECTION 04: M5 DISPLAY -->
+        <section class="project-section">
+            <p class="eyebrow">04 — M5 DISPLAY</p>
+            <h2>Creating the Display Interface</h2>
+
+            <div class="project-content-row">
+                <div>
+                    <p>
+                        With the main functionality of the device complete, I moved on to 
+                        creating a display interface for the M5StickCPlus2. This involved 
+                        creating four pages to display the information, which could be navigated 
+                        using the buttons on the device.
+                    </p>
+                </div>
+
+                <div class="project-image">
+                    <video controls muted style="max-width: 50%;">
+                        <source src="photos/07page.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer class="project-footer">
+        <p>Designed and developed by Lily Morris</p>
+
+        <div class="project-actions">
+            <a href="index.html" class="button">← Back to portfolio</a>
+
+            <a href="https://github.com/LilySky22/LilyPortfolio/tree/main"
+               class="button"
+               target="_blank"
+               rel="noopener noreferrer">
+                View on GitHub ↗
+            </a>
+        </div>
+    </footer>
+
+</body>
+</html>
